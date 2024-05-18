@@ -79,8 +79,8 @@
                 <div class="row justify-content-center">
                     <div class="col-md-2">
                         
-                        <a href="" class="btn btn-primary w-100 mb-2">Dashboard</a>
-                        <a href="" class="btn btn-primary w-100 mb-2">Manage Student</a>
+                        <a href="{{ route('home') }}" class="btn btn-primary w-100 mb-2">Dashboard</a>
+                        <a href="{{ route('student.index') }}" class="btn btn-primary w-100 mb-2">Manage Student</a>
                         <a href="" class="btn btn-primary w-100 mb-2">Manage Courses</a>
                         <a href="" class="btn btn-primary w-100 mb-2">Admissions</a>
                         <a href="" class="btn btn-danger w-100 mb-2">Logout</a>

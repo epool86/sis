@@ -1,7 +1,7 @@
 @extends('layouts.system')
 
 @section('content')
-<a href="{{ route('student.create') }}" class="btn btn-primary">Add New Student</a>
+<a href="{{ route('admin.student.create') }}" class="btn btn-primary">Add New Student</a>
 
 <hr>
 
@@ -25,11 +25,11 @@
 		<td>{{ $user->address_1 }} {{ $user->address_2 }} <br>{{ $user->city }} {{ $user->postcode }} {{ $user->state }}</td>
 		<td>{{ $user->email }}</td>
 		<td>
-			<form method="POST" action="{{ route('student.destroy', $user->id) }}">
+			<form method="POST" action="{{ route('admin.student.destroy', $user->id) }}">
 				<input type="hidden" name="_method" value="DELETE">
 				@csrf
-				<a href="{{ route('student.show', $user->id) }}" class="btn btn-info">View</a>
-				<a href="{{ route('student.edit', $user->id) }}" class="btn btn-primary">Edit</a>
+				<a href="{{ route('admin.student.show', $user->id) }}" class="btn btn-info">View</a>
+				<a href="{{ route('admin.student.edit', $user->id) }}" class="btn btn-primary">Edit</a>
 				<button type="submit" class="btn btn-danger">Delete</button>
 			</form>
 		</td>

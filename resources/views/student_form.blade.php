@@ -9,10 +9,10 @@
 
 		@if($student->id)
 			@php($method = 'PUT')
-			@php($action = route('student.update', $student->id))
+			@php($action = route('admin.student.update', $student->id))
 		@else
 			@php($method = 'POST')
-			@php($action = route('student.store'))
+			@php($action = route('admin.student.store'))
 		@endif
 
 		<form method="POST" action="{{ $action }}">
@@ -58,7 +58,7 @@
 				</tr>
 			</table>
 
-			<a href="{{ route('student.index') }}" class="btn btn-danger">Cancel</a>
+			<a href="{{ route('admin.student.index') }}" class="btn btn-danger">Cancel</a>
 			<button type="submit" class="btn btn-primary">Save</button>
 
 		</form>

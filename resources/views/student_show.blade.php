@@ -28,7 +28,7 @@
 			</tr>
 		</table>
 
-		<a href="{{ route('student.index') }}" class="btn btn-danger">Back</a>
+		<a href="{{ route('admin.student.index') }}" class="btn btn-danger">Back</a>
 
 	</div>
 </div>

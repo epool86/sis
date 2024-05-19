@@ -80,10 +80,18 @@
                     <div class="col-md-2">
                         
                         <a href="{{ route('home') }}" class="btn btn-primary w-100 mb-2">Dashboard</a>
-                        <a href="{{ route('student.index') }}" class="btn btn-primary w-100 mb-2">Manage Student</a>
-                        <a href="" class="btn btn-primary w-100 mb-2">Manage Courses</a>
-                        <a href="" class="btn btn-primary w-100 mb-2">Admissions</a>
-                        <a href="" class="btn btn-danger w-100 mb-2">Logout</a>
+
+                        @if(Auth::user()->role == 'student')
+                        <a href="{{ route('student.enrollment.index') }}" class="btn btn-primary w-100 mb-2">Register Course</a>
+                        @endif
+
+                        @if(Auth::user()->role == 'admin')
+                        <a href="{{ route('admin.student.index') }}" class="btn btn-primary w-100 mb-2">Manage Student</a>
+                        <a href="{{ route('admin.course.index') }}" class="btn btn-primary w-100 mb-2">Manage Courses</a>
+                        <a href="{{ route('admin.enrollment.index') }}" class="btn btn-primary w-100 mb-2">Admissions</a>
+                        @endif
+
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="btn btn-danger w-100 mb-2">Logout</a>
 
                     </div>
                     <div class="col-md-10">

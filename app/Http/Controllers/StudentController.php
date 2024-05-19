@@ -9,6 +9,7 @@ use App\Models\User;
 
 class StudentController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +19,9 @@ class StudentController extends Controller
     {
         
         $users = User::where('role','student')->get();
-        return view('student_index', compact('users'));
+        $var = 1;
+
+        return view('student_index', compact('users','var'));
 
     }
 
@@ -58,7 +61,7 @@ class StudentController extends Controller
 
         $user->save();
 
-        return redirect()->route('student.index');
+        return redirect()->route('admin.student.index');
 
     }
 
@@ -110,7 +113,7 @@ class StudentController extends Controller
 
         $student->save();
 
-        return redirect()->route('student.index');
+        return redirect()->route('admin.student.index');
     }
 
     /**
@@ -122,6 +125,6 @@ class StudentController extends Controller
     public function destroy(User $student)
     {
         $student->delete();
-        return redirect()->route('student.index');
+        return redirect()->route('admin.student.index');
     }
 }

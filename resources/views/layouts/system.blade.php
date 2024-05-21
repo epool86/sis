@@ -105,5 +105,8 @@
         </main>
 
     </div>
+
+    @yield('bottom_script')
+
 </body>
 </html>

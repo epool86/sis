@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth']], function(){
 		Route::resource('course', 'App\Http\Controllers\CourseController');
 		Route::get('/deleted/course', [App\Http\Controllers\CourseController::class, 'indexRestore'])->name('course.restore');
 		Route::get('/deleted/course/{course}', [App\Http\Controllers\CourseController::class, 'indexRestorePost'])->name('course.restore.post');
+		Route::get('/enrollment/pdf', [App\Http\Controllers\EnrollmentController::class, 'pdf'])->name('enrollment.pdf');
 		Route::get('/enrollment', [App\Http\Controllers\EnrollmentController::class, 'index'])->name('enrollment.index');
 	});
 
